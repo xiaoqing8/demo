@@ -1,0 +1,25 @@
+ul
+{
+list-style-type: none;
+}
+/* 设置为垂直导航栏 */
+a
+{display:block;
+width:160px;
+background-color:#dddddd;
+text-decoration:none;
+}
+li{
+	float:left;
+}
+/* 设置为水平导航栏 */
+/* li */
+/* { */
+	/* display:inline; */
+	/* padding:0; */
+	/* margin:0; */
+	/* background-color:#dddddd; */
+	
+/* } */
+
+/* a和第一个li也可构成水平导航栏 */

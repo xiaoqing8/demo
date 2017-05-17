@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>求和</title>
+	<style type="text/css">
+		#div 
+		{
+			width: 200px;
+			height: 50px;
+			line-height: 50px;
+			background: #CCC;
+			border: 1px solid black;
+			/*margin: 0 auto;*/ /*这个语句是使整个div左右居中*/
+			text-align: center;
+			/*font-size: 40px;*/ /*改变字的大小*/
+		}
+	</style>
+	<script type="text/javascript">
+
+		window.onload=function()
+		{
+			var oBtn=document.getElementById("btn");
+			var oTxt1=document.getElementById("txt1");
+			var oTxt2=document.getElementById("txt2");
+			var oDiv=document.getElementById("div");
+
+			oBtn.onclick = function()  //在点击按钮的时候再取值，如果这两句话在外面，不是闭包有问题，是因为刚刚加载完的时候这两个框是空的，所以是undefined,所以会弹出if后面的语句。
+			{
+				var num1 = parseInt(oTxt1.value);
+				var num2 = parseInt(oTxt2.value);
+				if(isNaN(num1))
+					//lert("您输入的第一个数据有误");
+				oDiv.innerHTML = "您输入的第一个数据有误";
+				else if(isNaN(num2))
+					//alert("您输入的第二个数据有误");
+				oDiv.innerHTML = "您输入的第二个数据有误";
+				else 
+					//alert(num1 + num2);
+				oDiv.innerHTML = num1 + num2 ;
+			};
+		};
+	</script>
+</head>
+<body>
+	<input id="txt1" type="text">
+	<input id="txt2" type="text">
+	<input id="btn" type="button" value="求和">
+	<div id="div"></div>
+</body>
+</html>

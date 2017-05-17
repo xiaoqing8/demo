@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>延时提示框</title>
+	<style type="text/css">
+		#div1
+		{
+			width: 100px;
+			height: 200px;
+			background-image: url(pic_bulbon.gif); 
+			background-repeat:no-repeat;
+			float:left;
+			margin:20px;
+		}
+		#div2
+		{
+			width: 200px;
+			height: 200px;
+			background: red;
+			float: left;
+			display: none;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function()
+		{
+			var oDiv1 = document.getElementById("div1");
+			var oDiv2 = document.getElementById("div2");
+			var timer=null;
+			oDiv1.onmouseover=oDiv2.onmouseover = function ()
+			{
+				oDiv2.style.display = 'block';
+				clearTimeout(timer);
+			};
+
+			oDiv1.onmouseout = oDiv2.onmouseout = function ()
+			{
+				timer=setTimeout(function (){
+					oDiv2.style.display = 'none';
+				},1000);//1000毫秒后执行none
+			};
+			// oDiv2.onmouseover = function ()
+			// {
+			// 	oDiv2.style.display = 'block';
+			// 	clearTimeout(timer);
+			// };
+			// oDiv2.onmouseout = function ()
+			// {
+			// 	timer=setTimeout(function (){
+			// 		oDiv2.style.display = 'none';
+			// 	},1000);//1000毫秒后执行none
+			// };
+		};//别忘记分号！！！！！！！
+	</script>
+</head>
+<body>
+	<div id='div1'></div>
+	<div id='div2'></div>
+</body>
+</html>

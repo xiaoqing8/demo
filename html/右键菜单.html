@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>右键菜单</title>
+	<style type="text/css">
+	*
+	{
+		margin: 0;
+		padding:0;
+		list-style: none;
+	}
+		div
+		{
+			width: 200px;
+			height: 200px;
+			border:2px solid black;
+			display: none;
+			position: absolute;
+		}
+	</style>
+<script type="text/javascript">
+	document.oncontextmenu = function(ev)
+	{
+		var oDiv = document.getElementById('div1');
+		var oEvent = ev||event;
+
+		oDiv.style.display='block';
+		oDiv.style.left = oEvent.clientX + 'px';
+		oDiv.style.top = oEvent.clientY + 'px';
+
+		return false;//阻止默认事件
+	};
+	document.onclick = function()   //实际用的时候这里要做相应的修改，因为这里点击菜单框的时候右键菜单框也会消失，可以给彩弹框单独加个点击事件，但要取消冒泡事件，或者是onmouseover事件
+	{
+		var oDiv = document.getElementById('div1');
+		oDiv.style.display='none';
+	};
+</script>
+</head>
+<body>
+<div id='div1'>
+	<ul>
+		<li>aaa</li>
+		<li>bbb</li>
+		<li>ccc</li>
+		<li>ddd</li>
+	</ul>
+</div>
+</body>
+</html>

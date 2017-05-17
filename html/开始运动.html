@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>开始运动</title>
+	<style type="text/css">
+		#div 
+		{
+			width: 200px;
+			height: 200px;
+			background: red;
+			position: absolute;
+			top: 50px;
+			left: 0;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+			var oBtn = document.getElementById('btn');
+			var oDiv = document.getElementById('div');
+			var timer = null;
+
+			oBtn.onclick = function(){   //是点击的瞬间发生的语句，起初点击的时候offsetLeft没有》=300,所以会一直走下去
+				// clearInterval(timer);
+				// timer = setInterval(function(){
+				// 	oDiv.style.left = oDiv.offsetLeft+10+'px';
+				// },30);
+				// if(oDiv.offsetLeft >= 300)
+				// {
+				// 	clearInterval(timer);
+				// }
+				clearInterval(timer);  //即使点了很多次按钮，div也是匀速运动的
+				timer = setInterval(function(){
+						//oDiv.style.left = oDiv.offsetLeft+10+'px';  //这样大部分情况下是对的，但若是想到达0处，就会出现不可修改的错误。
+					if(oDiv.offsetLeft == 300)   //这是比较好的方式！！先判断有没有到达想要去的地方，再进行运动
+					{
+						clearInterval(timer);
+					}
+					else 
+					{
+						oDiv.style.left = oDiv.offsetLeft+1+'px';
+					}
+					//oDiv.style.left = oDiv.offsetLeft+10+'px';
+				},30);
+
+			};
+		};
+	</script>
+</head>
+<body>
+	<input id='btn' type="button" value="开始运动">
+	<div id='div'></div>
+</body>
+</html>

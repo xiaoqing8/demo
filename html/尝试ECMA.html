@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>尝试ECMA</title>
+
+	<style type="text/css">
+		#output
+		{
+			width:200px;
+			height:200px;
+			border:5px solid black;
+		}
+	</style>
+
+	<script>
+	window.onload = function() {
+
+		var oButtons = document.getElementsByTagName('input');
+		var output = document.getElementById('output');
+
+		for (let i=0; i<oButtons.length;i++){  //let是ES6的使用，可以使该变量处于一个块级作用域，让事件监听器中的变量引用得到保持。
+
+				// oButtons[i].index = i;
+
+				oButtons[i].onclick = function() {
+				// output.innerHTML = "Je suis un button" + " " + this.index;
+				output.innerHTML = "Je suis un button" + " " + i;
+				// alert("我是一个按钮");
+		 	};
+		 }
+	};
+
+	</script>
+</head>
+<body>
+	<input type="button" value="一">  </input>
+	<input type="button" value="二">  </input>
+	<input type="button" value="三">  </input>
+	<input type="button" value="四">  </input>
+
+	<div id="output"></div>
+</body>
+</html>
