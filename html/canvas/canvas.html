@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>canvas</title>
+	<script type="text/javascript">
+	window.onload = function()
+	{
+		var c=document.getElementById("myCanvas");
+		var cxt=c.getContext("2d");
+		//绘制矩形
+		// cxt.fillStyle = "#FF0000";
+		// cxt.fillRect(0,0,150,75);
+		//绘制直线
+		// cxt.moveTo(10,10);
+		// cxt.lineTo(150,50);
+		// cxt.lineTo(10,50);
+		// cxt.stroke();
+		//绘制圆
+		// cxt.fillStyle = "#FF0000";
+		// cxt.beginPath();
+		// cxt.arc(100,50,50,0,Math.PI*2,true);
+		// cxt.closePath();
+		// cxt.fill();
+		//渐变
+		var grd=cxt.createLinearGradient(25,10,175,50);
+		grd.addColorStop(0,"#FF0000");
+		grd.addColorStop(1,"#00FF00");
+		cxt.fillStyle=grd;
+		cxt.fillRect(25,10,175,50);
+		//往画布上加图片
+		// var img = document.getElementById('img1');
+		// cxt.drawImage(img,0,0,200,100);
+	};
+	</script>
+</head>
+<body>
+<canvas id="myCanvas" width="200" height="100" style="border: 1px solid black;"></canvas>
+<br>
+<img src="image1.jpg" id='img1' style="width: 200px;height: 100px;">
+</body>
+</html>

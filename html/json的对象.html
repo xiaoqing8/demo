@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>json的对象</title>
+	<script type="text/javascript">
+	function json() {
+		var json = {
+		name:'blue',
+		qq:'2321435436',
+		showName: function()
+		{
+			alert('我的名字叫:' + this.name);
+		},
+		showQQ: function()
+		{
+			alert('我的QQ:' + this.qq);
+		}
+		};
+		json.showQQ();
+		json.showName();
+	}
+	</script>
+</head>
+<body>
+<button onclick="json()">json的对象</button>
+</body>
+</html>

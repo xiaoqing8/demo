@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>数码时钟</title>
+	<style type="text/css">
+		#div-continer
+		{
+			width: 1300px;
+			height: 500px;
+			background: black;	
+			color:white;
+			font-size: 50px;
+			margin: 0 auto;
+			line-height: 500px;		
+		}
+		#div-time
+		{
+			width: 550px;
+			height: 200px;
+			margin: 0 auto;	
+			line-height: 200px;
+		}
+		#div-year
+		{
+			width: 800px;
+			height: 200px;	
+			margin: 0 auto;	
+			line-height: 200px;
+		}
+		#div-date
+		{
+			width: 300px;
+			height: 150px;
+			line-height: 150px;
+		}
+		#div-time img
+		{
+			width: 50px;
+			height: 100px;
+		}
+		#div-year  img
+		{
+			width: 50px;
+			height: 100px;
+		}
+		#div-date img
+		{
+			width: 200px;
+			height: 150px;
+			line-height: 150px;
+		}
+	</style>
+	<script type="text/javascript">
+	function toDub(a)  //这个函数是为了保证取到两位数
+	{
+		if(a<10)
+			return "0" + a;
+		else 
+       	    return "" + a;//保证得到的是字符串，“”是空的！！！保证得到字符串
+       }
+
+
+
+	window.onload=function()    ////特别特别重要的一句话！！！！！！
+	{
+		var oDivTime = document.getElementById("div-time");
+		var aImageTime = oDivTime.getElementsByTagName("img");
+
+		var oDivYear = document.getElementById("div-year");
+		var aImageYear = oDivYear.getElementsByTagName("img");
+
+		var oImageDate = document.getElementById("img-date");
+
+
+		function calculDay(day)
+		{
+			switch(day){
+				case 0:
+				oImageDate.src = 'dimanche.png';
+				break;
+				case 1:
+				oImageDate.src = 'lundi.jpg';
+				break;
+				case 2:
+				oImageDate.src = 'mardi.jpg';
+				break;
+				case 3:
+				oImageDate.src = 'mercredi.jpg';
+				break;
+				case 4:
+				oImageDate.src = 'jeudi.jpg';
+				break;
+				case 5:
+				oImageDate.src = 'vendredi.png';
+				break;
+				case 6:
+				oImageDate.src = 'samedi.png';
+				break;
+			}
+		}
+		
+		function clik()
+		{
+			var oDate = new Date();
+			var str = toDub(oDate.getHours())+toDub(oDate.getMinutes())+toDub(oDate.getSeconds());
+
+			for( var i=0; i<aImageTime.length;i++)
+			{
+				aImageTime[i].src = str.charAt(i) + ".png";
+			}
+		}
+		setInterval(clik,1000);
+		clik();
+
+
+		function dic()
+
+		{
+			var oDate = new Date();   //这句话在每次循环中都要做，所以不能提到外面去
+			var str = toDub(oDate.getFullYear())+toDub(oDate.getMonth()+1)+toDub(oDate.getDate());
+
+			for( var i=0; i<aImageYear.length;i++)
+			{
+				aImageYear[i].src = str.charAt(i) + ".png";
+			}
+		}
+		 //setInterval(dic,86400000);
+		 setInterval(dic,1000);
+		 dic();
+
+		 var oDate = new Date();
+		 calculDay(oDate.getDay());
+		};
+
+	</script>
+</head>
+<body>
+	<div id='div-continer'>
+
+		<div id='div-time'>
+			<img src="2.png">
+			<img src="2.png">
+			:
+			<img src="2.png">
+			<img src="2.png">
+			:
+			<img src="2.png">
+			<img src="2.png">
+		</div>
+
+		<div id='div-year'>
+			<img src="2.png">
+			<img src="2.png">
+			<img src="2.png">
+			<img src="2.png">
+			/
+			<img src="2.png">
+			<img src="2.png">
+			/
+			<img src="2.png">
+			<img src="2.png">
+			<br>
+		</div>
+
+		<div id='div-date'>
+			<img id='img-date' src="lundi.jpg">
+		</div>
+	</div>
+</body>
+</html>

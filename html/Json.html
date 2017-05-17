@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Json</title>
+	<script type="text/javascript">
+	function json(){
+		var json = {a: 3, b: 'rt', c: 45};
+		var arr = [3,'rt',45];
+
+		// alert(arr[2]);
+		// // alert(json.c);
+		// alert(json['c']);
+
+		// alert (json.length);
+		// alert(arr.length);
+		for(var i in json)
+			alert (json[i]);
+	}
+	</script>
+</head>
+<body>
+json的内容为 {a: 3, b: 'rt', c: 45} !</br>
+<button onclick="json()">看看内容呗</button>
+</body>
+</html>

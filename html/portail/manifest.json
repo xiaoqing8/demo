@@ -1,0 +1,35 @@
+{
+  "manifest_version": 2,
+  "version": "1.0",
+  "name": "Login Assitant",
+  "description": "Login Assitant for the portail of ECN",
+
+  "browser_action": {
+   "default_icon": {
+    "19": "images/hippocampe.png",
+    "38": "images/hippocampe.png"
+  },
+  "default_title": "Click here!",
+  "default_popup": "popup.html"
+},
+
+"permissions": [
+  "https://portailwifi.ec-nantes.fr/*",
+  "https://portailvpn.ec-nantes.fr/*",
+  "storage", 
+  "tabs"
+],
+
+"background": {
+
+},
+
+"content_scripts": [
+  {
+    "matches": ["https://portailwifi.ec-nantes.fr/*","https://portailvpn.ec-nantes.fr/*"],
+    "js": ["content_scripts.js"],
+    "run_at": "document_end",
+    "all_frames": true
+  }
+]
+}

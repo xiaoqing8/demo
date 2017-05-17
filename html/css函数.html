@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>css函数</title>
+	<script type="text/javascript">
+		function css()//可在此函数中添加参数，arguments[0]是objet, [1]是name, [2]是value
+		{
+			if (arguments.length == 2)   //提取元素
+				return arguments[0].style[arguments[1]];
+			else
+				arguments[0].style[arguments[1]] = arguments[2];
+		}
+		window.onload = function()
+		{
+			var oDiv = document.getElementById("div1");
+			alert("the color of the div is : " + css(oDiv, 'background'));
+			//css(oDiv, 'width', '400px');
+			css(oDiv,'background','green');
+		};
+
+	</script>
+</head>
+<body>
+	<div id="div1" style = "width:200px; height: 200px; background: red;"></div>
+</body>
+</html>

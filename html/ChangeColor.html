@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>changeColor</title>
+	<style type="text/css">
+		#div1
+		{
+			width: 200px;
+			height: 200px;
+			background: red;
+		}
+	</style>
+	<script type="text/javascript">
+		function toGreen()
+		{
+			var str = document.getElementById("div1");
+			str.style.width = '300px';
+			str.style.height = '300px';
+			str.style.background = 'green';
+		}
+		function toRed()
+		{
+            var str = document.getElementById("div1");
+			str.style.width = '200px';
+			str.style.height = '200px';
+			str.style.background = 'red';
+		}
+	</script>
+</head>
+<body>
+<div id = "div1" onmouseover="toGreen()" onmouseout="toRed()"></div>
+</body>
+</html>

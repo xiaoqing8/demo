@@ -1,0 +1,120 @@
+	*
+	{
+		margin: 0;
+		padding: 0;
+	}
+	#picContiner
+	{
+		width: 400px;
+		height: 500px;
+		background: #CCC;
+		position: absolute;
+		top: 50px;
+		left: 425px;
+	}
+	#bigPic
+	{
+		width: 400px;
+		height: 390px;
+		border-bottom: 1px solid black;
+		overflow: hidden;
+		position: relative;
+	}
+	#bg li
+	{
+		width: 400px;
+		height: 390px;
+		list-style: none;
+		overflow: hidden;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 0;
+	}
+	#bg img
+	{
+		width: 400px;
+		height: 390px;
+	}
+	#mark-left
+	{
+		width: 200px;
+		height: 390px;
+		background: red;
+		opacity: 0;
+		filter: alpha(opacity:0);
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 3000;
+	}
+	#mark-right
+	{
+		width: 200px;
+		height: 390px;
+		background: green;
+		opacity: 0;
+		filter: alpha(opacity:0);
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: 3000;
+	}
+	#btnLeft
+	{
+		width: 60px;
+		height: 60px;
+		position: absolute;
+		top: 165px;
+		left: 0;
+		z-index: 3005;
+		opacity: 0;
+		filter:alpha(opacity:0);
+		cursor: pointer;
+		/*display: none;*/
+	}
+	#btnRight
+	{
+		width: 60px;
+		height: 60px;
+		position: absolute;
+		top: 165px;
+		right: 0;
+		z-index: 3005;
+		opacity: 0;
+		filter:alpha(opacity:0);
+		cursor: pointer;
+	}
+	#smallPic
+	{
+		width: 400px;
+		height: 94px;
+		position: relative;
+		margin-top: 6px;
+		overflow: hidden;
+	}
+	#small
+	{
+		width: 400px;
+		height: 94px;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	#small img
+	{
+		width: 120px;
+		height: 94px;
+	}
+	#small li
+	{
+		width: 120px;
+		height: 94px;
+		list-style: none;
+		margin-left: 10px;
+		opacity: 0.6;
+		filter: alpha(opacity:60);
+		float: left; /*让所有照片都显示出来*/
+		cursor: pointer;
+
+	}

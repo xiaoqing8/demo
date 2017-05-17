@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>exercice2</title>
+	<style type="text/css">
+	*
+	{
+		margin: 0;
+		padding: 0;
+	}
+		#div-container
+		{
+			width: 1030px;
+			height: 630px;
+			border: 1px solid black;
+			margin:15px auto;
+		}
+		#div-entete
+		{
+			width: 1000px;
+			height: 130px;
+			margin: 15px;
+			background: orange;
+		}
+		img
+		{
+			width: 90px;
+			height: 100px;
+			margin: 15px;
+			float: left;
+		}
+		#div-title
+		{
+			width: 800px;
+			height: 70px;
+			background: pink;
+			color: blue;
+			text-align: center;
+			float: left;
+			margin: 30px 40px;
+			font-size: 40px;
+			line-height: 70px;
+		}
+		#div-body
+		{
+			width: 1000px;
+			height: 420px;
+			margin:15px;
+		}
+		#div-gauche
+		{
+			width: 270px;
+			height: 420px;
+			margin-right:15px;
+			background: orange;
+			float: left;
+		}
+		.gauche-title
+		{
+			height: 30px;
+			width: 230px;
+			margin: 10px 0 0 10px;
+			background: red;
+			line-height: 30px;
+			color: white;
+		}
+		#title-jeu
+		{
+			background: blue;
+		}
+		.gauche-contenu
+		{
+			height: 100px;
+			width: 250px;
+			margin: 0 0 10px 10px;
+			line-height: 25px;
+		}
+		li
+		{
+			list-style: none;
+			width: 250px;
+			height: 25px;
+			background: white;
+		}
+		.active
+		{
+			background: green;
+			color: white;
+		}
+		.desactive
+		{
+			background: white;
+			color: black;
+		}
+		#div-droite
+		{
+			width: 715px;
+			height: 420px;
+			float: left;
+		}
+		iframe
+		{
+			width: 715px;
+			height: 420px;
+		}
+		#div-footer
+		{
+			width: 1000px;
+			height: 20px;
+			margin: 15px;
+			background: black;
+			color: white;
+			text-align: center;
+			line-height: 20px;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function()
+		{
+			var aLi = document.getElementsByTagName('li');
+			for(var i=0;i<aLi.length;i++)
+			{
+				aLi[i].onmouseover = function(){
+					this.className = "active";
+				};
+				aLi[i].onmouseout = function(){
+					this.className = "desactive";
+				};
+			}
+
+			var oUl1 = document.getElementById("ulActivite");
+			var oUl2 = document.getElementById("ulJeux");
+			var aLi1 = oUl1.getElementsByTagName("li");
+			var aLi2 = oUl2.getElementsByTagName("li");
+			for(var i=0;i<aLi1.length;i++)
+			{
+				aLi1[i].onclick = function()
+				{
+					oUl1.insertBefore(this,oUl1.children[0]);
+				};
+			}
+			for(var i=0;i<aLi2.length;i++)
+			{
+				aLi2[i].onclick = function()
+				{
+					oUl2.insertBefore(this,oUl2.children[0]);
+				};
+			}
+		};
+	</script>
+</head>
+<body>
+<div id="div-container">
+	<div id="div-entete">
+		<img src="ECN.jpg">
+		<div id="div-title">
+			Ecole Centrale Nantes
+		</div>
+	</div>
+	<div id="div-body">
+		<div id="div-gauche">
+			<div class="gauche-title">
+				Actualités
+			</div>
+			<div class="gauche-contenu">
+				<ul id="ulActivite">
+					<li class="desactive">Economie</li>
+					<li class="desactive">Finance</li>
+					<li class="desactive">Sciences</li>
+					<li class="desactive">Marine</li>
+				</ul>
+			</div>
+			<div class="gauche-title" id="title-jeu">
+				Jeux
+			</div>
+			<div class="gauche-contenu">
+				<ul id="ulJeux">
+					<li class="desactive">DA Inquisition</li>
+					<li class="desactive">Skyrim</li>
+					<li class="desactive">The Witcher 3</li>
+					<li class="desactive">Dota2</li>
+				</ul>
+			</div>
+		</div>
+	    <div id="div-droite">
+	    	<iframe src="http://www.ec-nantes.fr"></iframe>
+	    </div>	
+	</div>
+	<div id="div-footer">
+		&copyXiaoqing Guoxin - Ecole Centrale de Nantes - Frame
+	</div>
+</div>
+</body>
+</html>
