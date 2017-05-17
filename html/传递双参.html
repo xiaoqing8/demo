@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>传递双参</title>
+	<style type="text/css">
+		#div
+		{
+			width: 200px;
+			height: 200px;
+			background: red;
+			border: 1px solid black;
+		}
+	</style>
+	<script type="text/javascript">
+		function setStyle(name,value)
+		{
+			var oDiv = document.getElementById('div');
+			oDiv.style[name]= value;
+		}
+
+		window.onload = function()
+		{
+			var oBtn1 =  document.getElementById('btn1');
+			var oBtn2 =  document.getElementById('btn2');
+			var oBtn3 =  document.getElementById('btn3');
+
+            oBtn1.onclick = function(){
+            	setStyle('width','400px');
+            };
+
+                oBtn2.onclick = function(){
+            	setStyle('height','400px');
+            };
+                oBtn3.onclick = function(){
+            	setStyle('background', 'green');
+            };
+		};
+	</script>
+</head>
+<body>
+<input id="btn1" type="button" value="变宽" >
+<input id="btn2" type="button" value="变高" >
+<input id="btn3" type="button" value="变绿" >
+<div id = "div"></div>
+</body>
+</html>

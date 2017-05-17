@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>函数传参</title>
+	<style type="text/css">
+		#div1
+		{
+			width: 200px;
+			height: 200px;
+			background: red;
+			border: 5px solid black;
+		}
+	</style>
+	<script type="text/javascript">
+		function setColor(color) 
+		{
+			var str = document.getElementById("div1");
+			str.style.background = color;
+		}
+
+		window.onload = function (){ //页面加载完成后执行，对input在script中加动作的时候一般都要用这句话
+
+			var oBtn1 = document.getElementById("btn1");//变量要写在window.onload 函数里面
+			var oBtn2 = document.getElementById("btn2");
+			var oBtn3 = document.getElementById("btn3");
+			oBtn1.onclick = function (){ //不能直接使用Id, 要用document.getElementById("*")
+				setColor("yellow");
+
+			};
+			oBtn2.onclick = function (){
+				setColor("green");
+			};
+			oBtn3.onclick = function (){
+				setColor("black");
+			};
+
+		};
+	</script>
+</head>
+<body>
+	<input id = "btn1" type="button" value="变黄">
+	<input id = "btn2" type="button" value="变绿">
+	<input id = "btn3" type="button" value="变黑">
+	<div id = "div1"></div>
+</body>
+</html>

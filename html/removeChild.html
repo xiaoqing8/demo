@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>removeChild</title>
+	<style type="text/css">
+		.cell-red
+     {
+	width: 100px;
+	height: 100px;
+	background: red;
+	float: left;
+     }
+    .cell-white
+    {
+	width: 100px;
+	height: 100px;
+	background: orange;
+	float: left;
+    }
+    .row
+    {
+    width: 400px;
+	height: 100px;
+	background: white;
+    }
+    #div
+{
+	width: 400px;
+	height: 400px;
+	background: white;
+	overflow: hidden;
+	position: relative;
+	margin: 0 auto;
+	border: 2px solid gray;
+}
+#div-continer
+{
+	 width: 400px;
+     height: 500px;
+     position: absolute;
+     top: -100px;
+     /*border-collapse:collapse;	*/
+     background: pink;
+     z-index: 1000;
+}
+	</style>
+		<script type="text/javascript">
+		window.onload = function(){
+			var oDiv = document.getElementById('div-continer');
+			alert(oDiv.children.length);
+			oDiv.removeChild(oDiv.children[0]);
+			alert(oDiv.children.length);
+		};
+	</script>
+
+</head>
+<body>
+<div id='div'>
+<div id='div-continer'>
+	<div class='row'>
+		<div class='cell-white'></div>
+		<div class='cell-white'></div>
+		<div class='cell-white'></div>
+		<div class='cell-red'></div>
+	</div>
+	<div class='row'>
+		<div class='cell-red'></div>
+		<div class='cell-white'></div>
+		<div class='cell-white'></div>
+		<div class='cell-white'></div>
+	</div>
+	<div class='row'>
+		<div class='cell-white'></div>
+		<div class='cell-red'></div>
+		<div class='cell-white'></div>
+		<div class='cell-white'></div>
+	</div>
+	<div class='row'>
+		<div class='cell-white'></div>
+		<div class='cell-white'></div>
+		<div class='cell-red'></div>
+		<div class='cell-white'></div>
+	</div>
+	<div class='row'>
+		<div class='cell-white'></div>
+		<div class='cell-white'></div>
+		<div class='cell-white'></div>
+		<div class='cell-red'></div>
+	</div>
+</div>	
+</div>
+
+</body>

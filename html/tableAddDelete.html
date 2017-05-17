@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>AddDelete</title>
+	<script type="text/javascript">
+		window.onload = function()
+		{
+			var oTab = document.getElementById('tab');
+
+			var oTxtNom = document.getElementById('姓名');
+			var oTxtSex = document.getElementById('性别');
+			var oTxtAge = document.getElementById('年龄');
+
+			var oBtn = document.getElementById('btn');
+			var oBtn1 = document.getElementById('btn1');
+
+			var id=oTab.tBodies[0].rows.length+1;
+
+			oBtn.onclick = function()
+			{
+				var oTr = document.createElement('tr');
+
+				var oTd = document.createElement('td');
+				oTd.innerHTML = id++; //被抛弃过的ID将不再重复使用
+				oTr.appendChild(oTd);
+
+				var oTd = document.createElement('td');
+				oTd.innerHTML = oTxtNom.value;
+				oTr.appendChild(oTd);
+
+				var oTd = document.createElement('td');
+				oTd.innerHTML = oTxtSex.value;
+				oTr.appendChild(oTd);
+
+				var oTd = document.createElement('td');
+				oTd.innerHTML = oTxtAge.value;
+				oTr.appendChild(oTd);								
+
+				oTab.tBodies[0].appendChild(oTr);
+			};
+			oBtn1.onclick=function(){
+				oTab.tBodies[0].deleteRow(0);
+			};
+		};
+	</script>
+</head>
+<body>
+	<input type="text" id = '姓名'>
+	<input type="text" id = '性别'>
+	<input type="text" id = '年龄'>
+	<input type="button" value="添加" id='btn'>
+	<input type="button" value="删除" id='btn1'>
+	<table id='tab' border='1' width="500">
+		<thead>
+			<td>ID</td>
+			<td>姓名</td>
+			<td>性别</td>
+			<td>年龄</td>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>张三</td>
+				<td>女</td>
+				<td>12</td>
+			</tr>
+			<tr>
+			<td>2</td>
+				<td>李四</td>
+				<td>男</td>
+				<td>13</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>张四</td>
+				<td>女</td>
+				<td>21</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>原型</title>
+	<script type="text/javascript">
+		var arr = new Array(12,34,21,54,34);
+		var arr2 = new Array(1,2,3);
+
+		Array.prototype.sum = function()
+		{
+			var resultat = 0;
+			 for(var i=0; i<this.length;i++)
+			 {
+			 	resultat+=this[i];
+			 }
+			 return resultat;
+		};
+        function answer (){
+        	oInput1 = document.getElementById("array1Answer");
+        	oInput2 = document.getElementById("array2Answer");
+
+            oInput1.value = arr.sum();
+            oInput2.value = arr2.sum();
+        }
+	</script>
+</head>
+<body>
+我有两个数组，我想定义一个函数让这两个变量通用，避免重复定义。</br>
+按按钮的时候两个数组的和值会出现在各自右边的结果框中</br>
+<input type="text" name="array 1" id="array1" value="(12,34,21,54,34)">
+<input type="text" name="array 1" id="array1Answer"></br>
+<input type="text" name="array 1" id="array2" value="(1,2,3)"> 
+<input type="text" name="array 1" id="array2Answer"></br>
+<button onclick="answer()"> 求和 </button>
+</body>
+</html>

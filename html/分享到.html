@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>分享到</title>
+	<style type="text/css">
+		#div1
+		{
+			width: 150px;
+			height: 200px;
+			background: green;
+			position: absolute;
+			left: -150px;
+		}
+		#div1 span
+		{
+			width: 20px;
+			height: 60px;
+			line-height: 20px;
+			background: blue;
+			position: absolute;
+			right: -20px;
+			top: 70px;
+
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oDiv = document.getElementById("div1");
+	// var oSpan = oDiv.getElementsByTagName('span')[0];
+	// oSpan.onmouseover = function(){
+	// 	oDiv.style.left = 0;
+	// };
+	// oDiv.onmouseout = function(){
+	// 	oDiv.style.left='-150px';
+	// };
+	oDiv.onmouseover = function(){
+		//startMove();
+		startMove(0);
+	};
+	oDiv.onmouseout = function(){
+		// startMove2();
+		startMove(-150);
+	};
+
+
+};
+var timer = null;
+	function startMove(iTarget)//第三版
+	{
+		var oDiv = document.getElementById("div1");
+		var speed = 0;
+		// if(oDiv.offsetLeft > iTarget)
+		// {
+		// 	speed=-10;
+		// }
+		// else
+		// {
+		// 	speed=10;
+		// }
+		clearInterval(timer);
+		timer = setInterval(function(){
+			if(oDiv.offsetLeft > iTarget)//每30毫秒要判断一下是否还是在iTarget的同一边，这里设置了clearInterval，所以放在两处执行效果一样的。
+			{
+				speed=-10;
+			}
+			else
+			{
+				speed=10;
+			}
+			if(oDiv.offsetLeft == iTarget)
+			{
+				clearInterval(timer);
+			}
+			else
+			{
+				oDiv.style.left = oDiv.offsetLeft+speed+'px';
+			}
+		},30);
+	}
+	// 	function startMove(speed,iTarget)//第二版
+	// {
+	// 	var oDiv = document.getElementById("div1");
+	// 	clearInterval(timer);
+	// 	timer = setInterval(function(){
+	// 		if(oDiv.offsetLeft == iTarget)
+	// 		{
+	// 			clearInterval(timer);
+	// 		}
+	// 		else
+	// 		{
+	// 			oDiv.style.left = oDiv.offsetLeft+speed+'px';
+	// 		}
+	// 	},30);
+	// }
+	// function startMove()//第一版
+	// {
+	// 	var oDiv = document.getElementById("div1");
+	// 	clearInterval(timer);
+	// 	timer = setInterval(function(){
+	// 		if(oDiv.offsetLeft == 0)
+	// 		{
+	// 			clearInterval(timer);
+	// 		}
+	// 		else
+	// 		{
+	// 			oDiv.style.left = oDiv.offsetLeft+10+'px';
+	// 		}
+	// 	},30);
+	// }
+	// 	function startMove2()
+	// {
+	// 	var oDiv = document.getElementById("div1");
+	// 	clearInterval(timer);
+	// 	timer = setInterval(function(){
+	// 		if(oDiv.offsetLeft == -150)
+	// 		{
+	// 			clearInterval(timer);
+	// 		}
+	// 		else
+	// 		{
+	// 			oDiv.style.left = oDiv.offsetLeft-10+'px';
+	// 		}
+	// 	},30);
+	// }
+</script>
+</head>
+<body>
+	<div id='div1'>
+		<span>分享到</span>
+	</div>
+</body>
+</html>

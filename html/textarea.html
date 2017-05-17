@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>textarea</title>
+	<link rel="shortcut icon" href="doc.jpg">
+	<style type="text/css">
+	  textarea{
+		position: relative;
+		left:200px;
+		display: block;
+		margin-top: 10px;
+	  }
+	</style>
+	<script type="text/javascript">
+	  window.onload = function() {
+		var content = '最近遇到这样一个需求：需要在页面中显示一段第三方文本信息。这些文本完全由第三方自己 定义，我们负责显示在页面即可，第三方要求这些文本需要换行显示即可。<br>我们都知道在 HTML中，用标签</br>可以实现换行，转义字符\n也可以实现换行。虽然效果一样，但是这两种换行的方式使用起来却不同。';
+		// document.getElementsByTagName('textarea')[1].value=content;	
+		// document.getElementsByTagName('textarea')[1].innerHTML=content;	
+		document.getElementsByTagName('textarea')[1].innerText=content;		
+	  };
+
+	</script>
+</head>
+<body>
+	<textarea rows="10" cols="50" autofocus="autofocus">
+At w3schools.com you will learn how to make a website. We offer free tutorials `\n`\n  <br\> 
+all web development 
+technologies. 
+    </textarea>
+    <textarea rows="10" cols="50" autofocus="autofocus"></textarea>
+</body>
+</html>

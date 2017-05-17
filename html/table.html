@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>表格</title>
+	<style type="text/css">
+		#tab
+		{
+			text-align: center;
+		}
+	</style>
+	<script type="text/javascript">
+	window.onload = function()
+	{
+		var oTab = document.getElementById('tab');
+		var oldColor = null;
+		//alert(oTab.getElementsByTagName('tbody')[0].getElementsByTagName('tr')[1].getElementsByTagName("td")[1].innerHTML);
+		//alert(oTab.tBodies[0].rows[1].cells[1].innerHTML);
+		for(var i=0;i<oTab.tBodies[0].rows.length;i++)
+		{
+			if(i%2 == 0)
+			{
+				oTab.tBodies[0].rows[i].style.background ='red';
+			}
+			else 
+				oTab.tBodies[0].rows[i].style.background ='#CCC';
+			oTab.tBodies[0].rows[i].onmouseover = function(){
+				oldColor = this.style.background;
+				this.style.background = 'green';
+			};
+			oTab.tBodies[0].rows[i].onmouseout = function(){
+				this.style.background = oldColor;
+			};
+
+		}
+	};	
+	</script>
+</head>
+<body>
+	<table id='tab' border='1' width="500">
+		<thead>
+			<td>姓名</td>
+			<td>性别</td>
+			<td>年龄</td>
+		</thead>
+		<tbody>
+			<tr>
+				<td>张三</td>
+				<td>女</td>
+				<td>12</td>
+			</tr>
+			<tr>
+			    <td>李四</td>
+				<td>男</td>
+				<td>13</td>
+			</tr>
+			<tr>
+				<td>张四</td>
+				<td>女</td>
+				<td>21</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
