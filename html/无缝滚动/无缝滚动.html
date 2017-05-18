@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>无缝滚动</title>
+	<style type="text/css">
+		*  /*让所有的元素没有任何边框*/
+		{   
+			margin: 0;
+			padding: 0;
+		}
+		img
+		{
+			width: 300px;
+			height: 200px;
+		}
+		#div1
+		{
+			position: relative;
+			left: 100px;
+			top: 200px;
+			background: red;
+			width: 1200px;
+			height: 200px;
+			overflow: hidden;
+		}
+		/*#ul1*/
+		#div1 ul
+		{
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+		#div1 ul li
+		{
+			list-style: none;
+			float: left;
+		}
+		#input1
+		{
+			position: absolute;
+			left: 0;
+			top: 300px;
+		}
+		#input2
+		{
+			position: absolute;
+			right: 0;
+			top: 300px;
+		}
+	</style>
+	<script type="text/javascript">
+	window.onload = function()
+	{
+		var oUl = document.getElementById('ul1');	
+		var aLi = oUl.getElementsByTagName('li');
+		var timer;
+
+		var oInputLeft = document.getElementById('input1');
+		var oInputRight = document.getElementById('input2');
+
+		var speed = 2;  //当只定义了一个speed参数但是没有给他赋值的时候，speed为0， 所以起初他会先停在一处，点了按钮才会有speed值才会移动
+
+		oUl.innerHTML+=oUl.innerHTML;
+		oUl.style.width = aLi[0].offsetWidth * aLi.length + 'px';
+		// var oDiv= document.getElementById('div1');
+		// var oUl = oDiv.getElementsByTagName('ul')[0];
+        
+	    function  move(){
+			if (oUl.offsetLeft < -oUl.offsetWidth/2)
+				oUl.style.left = '0';
+			if (oUl.offsetLeft > 0)
+				oUl.style.left = -oUl.offsetWidth/2 + 'px';
+			oUl.style.left = oUl.offsetLeft + speed + 'px';
+		}
+		timer=setInterval(move,500);	
+		oUl.onmouseover = function()
+		{
+			clearInterval(timer);
+		};
+				oUl.onmouseout = function()
+		{
+			timer=setInterval(move,500);	
+		};
+
+		oInputLeft.onclick = function()
+		{
+			speed = -4;
+		};
+		oInputRight.onclick = function()
+		{
+			speed = 4;
+		};
+	};
+
+	</script>
+</head>
+<body>
+	<input id='input1' type="button" value='向左走'>
+	<div id='div1'>
+		<ul id='ul1'>
+			<li><img src="image1.jpg"></li>
+			<li><img src="image2.jpg"></li>
+			<li><img src="image3.jpg"></li>
+			<li><img src="image4.jpg"></li>
+		</ul>
+	</div>
+	<input id='input2' type="button" value='向右走'>
+</body>
+</html>
