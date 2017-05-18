@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>引用</title>
+	<script type="text/javascript">
+		var arr1=[1,2,3,4];
+		var arr2=[];//如果写成arr2=arr1, 那么arr1和arr2指向同一个内存，改一个的时候会改变另一个。
+		for(var i=0;i<arr1.length;i++)
+		{
+			arr2.push(arr1[i]);
+		}
+		arr2.push(4);
+
+		alert(arr1);
+		alert(arr2);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

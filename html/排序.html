@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>排序</title>
+	<style type="text/css">
+		#ul1
+		{
+			background: green;
+		}
+		#ul2
+		{
+			background: yellow;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function()
+		{
+			var oUl1 = document.getElementById('ul1');
+			var oBtn = document.getElementById('btn');
+
+
+			oBtn.onclick = function(){
+				var aLi = oUl1.getElementsByTagName('li');
+				var arr=[];
+				for(var i=0;i<aLi.length;i++)
+				{
+					arr[i]=aLi[i];
+				}
+				arr.sort(function(li1,li2){
+					var n1 = parseInt(li1.innerHTML);
+					var n2 = parseInt(li2.innerHTML);
+					return n1-n2;
+				});
+				for(var i=0;i<aLi.length;i++)
+				{
+					oUl1.appendChild(arr[i]);
+				}
+			};
+
+		};
+	</script>
+</head>
+<body>
+	<input id = 'btn' type="button" value="排序">
+	<ul id='ul1'>
+		<li>1</li>
+		<li>29</li>
+		<li>13</li>
+		<li>4</li>
+	</ul>
+</body>
+</html>

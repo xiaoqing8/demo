@@ -1,0 +1,11 @@
+body
+{
+	background: black;
+}
+
+input
+{
+	width: 100px;
+	height: 50px;
+	background: yellow;
+}

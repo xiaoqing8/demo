@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>找出所有的数字</title>
+	<script type="text/javascript">
+		var str = '12 fff 87 er334 233 -=-=fa80';
+		var arr = [];
+		var temps = '';
+		for(var i=0;i<str.length;i++)
+		{
+			if(str.charAt(i)>='0' && str.charAt(i)<='9')
+			{
+				temps += str.charAt(i);
+			}
+			else
+			{
+				if(temps)
+				{
+				    arr.push(temps);  //把空的temps也写进来了，所以会有很多逗号,所以要加上上一句对temps进行检擦，是否为空
+				    temps = '';
+				}	
+			}
+		}
+		if(temps)
+		{
+			arr.push(temps);  //最后一个80后面再没有了，所以只有上面的循环判断不能把所有数字都写进去
+			temps = '';
+		}	
+		alert(arr);
+			</script>
+		</head>
+		<body>
+
+		</body>
+		</html>
