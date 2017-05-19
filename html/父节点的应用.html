@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>父节点的应用</title>
+	<style type="text/css">
+
+</style>
+<script type="text/javascript">
+	window.onload = function()
+	{
+		var aA = document.getElementsByTagName('a');
+		var oUl = document.getElementById('ul1');
+
+		for(var i = 0; i<aA.length;i++){
+			aA[i].onclick = function()
+			{
+				//传统方法
+				//this.parentNode.style.display = 'none';
+				//DOM方法删除元素
+				oUl.removeChild(this.parentNode);
+			};
+		}
+
+	};
+</script>
+</head>
+<body>
+	<ul id='ul1'>
+		<li> asdajhdjahdj <a href="javascript:;">隐藏</a></li>
+		<li> lkjh <a href="javascript:;">隐藏</a></li>
+		<li> weeer <a href="javascript:;">隐藏</a></li>
+		<li> cvvbbn <a href="javascript:;">隐藏</a></li>
+	</ul>
+</body>
+</html>
