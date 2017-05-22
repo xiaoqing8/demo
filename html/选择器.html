@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>选择器</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			//点击p时隐藏p元素
+			// $("p").click(function()
+			// {
+			// 	$(this).hide();
+			// });
+			//点击按钮是隐藏p元素
+			// $("button").click(function()
+			// {
+			// 	$("p").hide();
+			// });
+			//p的模拟光标悬停事件
+			// $("p").hover(
+			
+			// 	function()
+			// 	{
+			// 		alert('你进入p了');
+			// 	},
+			// 	function()
+			// 	{
+			// 		alert("拜拜！");
+			// 	}
+			// );
+			//当元素获得焦点时，发生 focus 事件。当通过鼠标点击选中元素或通过 tab 键定位到元素时，该元素就会获得焦点。
+			$("button").focus(function(){
+				$("p").css("background-color","#CCCCCC");
+			});
+			$("button").blur(function(){
+				$("p").css("background-color","#FFFFFF");
+			});			
+		});
+	</script>
+</head>
+<body>
+<button>变底色</button>
+<h1>尝试jQuery</h1>
+<p>我是杨晓庆</p>
+<p>谢谢大家</p>
+<p>有一个梦想就是实现所有的梦想</p>
+</body>
+</html>

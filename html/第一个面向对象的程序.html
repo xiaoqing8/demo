@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>第一个面向对象的程序</title>
+	<script type="text/javascript">
+	//工厂方式
+	function CreatePerson(name,qq)  //构造函数
+	{
+		//原料
+		var obj = new Object();
+		//加工
+		obj.name = name;
+		obj.qq = qq;
+
+		obj.showName = function ()
+		{
+			alert('我的名字叫：'+this.name);
+		};
+		obj.showQQ = function()
+		{
+			alert('我的QQ号：'+this.qq);
+		};
+		obj.showName();
+		obj.showQQ();
+		//出厂
+		return obj;		
+	}
+		var obj = CreatePerson('blue','2222222');
+
+		var obj2 = CreatePerson('zhangsan','23243423423');
+	</script>
+</head>
+<body>
+
+</body>
+</html>

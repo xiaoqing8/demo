@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>选项卡</title>
+	<style type="text/css">
+		#div div
+		{
+			width: 200px;
+			height: 200px;
+			background: #CCC;
+            border: 1px solid black; 
+            display: none;
+		}
+		 .active
+		{
+			background: orange;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function()
+		{
+			oBtn = document.getElementsByTagName("input");
+			oDiv = document.getElementById("div");
+			ooDiv = oDiv.getElementsByTagName("div");
+
+			for(var i=0; i<oBtn.length;i++)
+			{
+				oBtn[i].index = i;//注意变量的作用域问题， 将这句话放入onclick函数里面后那个i是找不到的
+
+				oBtn[i].onclick= function()
+				{
+					for (var i=0;i<oBtn.length;i++)
+					{
+						oBtn[i].className = " ";
+						ooDiv[i].style.display = "none";
+					}
+
+					this.className = "active";
+					ooDiv[this.index].style.display = "block";//注意display属性是在style标签里的！！！！
+				};
+			}
+
+		};
+	</script>
+</head>
+<body>
+<input  class = "active" type="button" value="教育">
+<input  type="button" value="医疗">
+<input  type="button" value="出国">
+<input  type="button" value="研博">
+<div id = "div">
+	<div style="display: block;">111</div>
+	<div>222</div>
+	<div>333</div>
+	<div>444</div>
+</div>
+</body>
+</html>

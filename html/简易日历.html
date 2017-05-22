@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>简易日历</title>
+	<style type="text/css">
+		#div-fond
+		{
+			width: 320px;
+			height: 600px;
+			background: #CCC;
+			border: 5px solid black;
+			margin: 0 auto;
+		}
+		#div-fond div
+		{
+			width: 80px;
+			height: 80px;
+            margin: 20px 0 0 20px;
+            background: black;
+            text-align: center;
+            color:orange;
+            float: left;
+            line-height: 80px;
+		}
+		#div-fond .foot
+		{
+			width: 280px;
+			height: 160px;
+			color: green;
+			margin:20px;
+			float: left;
+			line-height: 40px;
+		}
+	</style>
+	<script type="text/javascript">
+	var arr = ['什么都可以做的，有志者事竟成，没有做不了的事，要相信科学','什么都可以做的，有志者事竟成，没有做不了的事，要相信科学','什么都可以做的，要相信科学','有志者事竟成','什么都可以做的','什么都可以做的，有志者事竟成，没有做不了的事，要相信科学','什么都可以做的，有志者事竟成，没有做不了的事，要相信科学','什么都可以做的，有志者事竟成，没有做不了的事，要相信科学','什么都可以做的，有志者事竟成，没有做不了的事，要相信科学','什么都可以做的，有志者事竟成，没有做不了的事，要相信科学','什么都可以做的，有志者事竟成，没有做不了的事，要相信科学','什么都可以做的，有志者事竟成，没有做不了的事，要相信科学'];
+	window.onload = function(){
+		var oDiv = document.getElementById("div-fond");
+		var oDivMois = oDiv.getElementsByTagName("div");
+
+		for(var i=0; i<oDivMois.length-1;i++)
+		{
+            oDivMois[i].index = i;
+			oDivMois[i].onmouseover = function()
+			{
+				this.style.background = 'red';
+				//oDivMois[oDivMois.length-1].innerHTML = "dhasgdjhgdy";
+				//this.innerHTML = "<h1>" + (this.index+1) + "月宜做</h1> <p>" + arr[this.index] + "</p>";
+                  oDivMois[oDivMois.length-1].innerHTML = "<h1>" + (this.index+1) + "月宜做</h1> <p>" + arr[this.index] + "</p>";
+			};
+			oDivMois[i].onmouseout = function()
+			{
+				this.style.background = 'black';
+			};
+		}
+	};
+
+	</script>
+</head>
+<body>
+<div id = "div-fond">
+	<div>1</div>
+	<div>2</div>
+	<div>3</div>
+	<div>4</div>
+	<div>5</div>
+	<div>6</div>
+	<div>7</div>
+	<div>8</div>
+	<div>9</div>
+	<div>10</div>
+	<div>11</div>
+	<div>12</div>
+	<div class="foot">
+		<h1>1月宜做</h1>
+		<p>什么都可以做的，有志者事竟成，没有做不了的事，要相信科学</p>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>队列类</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		class Queue{
+			constructor(content=[]){
+				this._queue=[...content];
+			}
+			shift(){
+				const value = this._queue[0];
+				this._queue.shift();
+				return value;
+			}
+			push(value){
+				this._queue.push(value);
+				return this._queue.length;
+			}
+		}
+		var queue=new Queue([1,2,3,4]);
+
+		queue.shift();
+		console.log(queue.shift());
+
+		queue.push(5);
+		console.log(queue.push(5));
+		
+		console.log(queue._queue);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

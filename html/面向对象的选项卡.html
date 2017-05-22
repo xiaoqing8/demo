@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>选项卡</title>
+	<style type="text/css">
+		input
+		{
+			background: white;
+		}
+		.active
+		{
+			background: yellow;
+		}
+		#div-continer div
+		{
+			width: 200px;
+			height: 200px;
+			background: #CCC;
+			display: none;
+		}
+	</style>
+	<script type="text/javascript">
+
+		window.onload = function()
+		{
+			new TabSwitch('div-continer');
+		};
+		function TabSwitch(id)
+		{
+
+			var _this = this;
+			var oDiv=document.getElementById(id);
+			this.aBtn = oDiv.getElementsByTagName('input');
+			this.aDiv = oDiv.getElementsByTagName('div');
+			for(var i=0;i<this.aBtn.length;i++)
+			{
+				this.aBtn[i].index = i;
+				this.aBtn[i].onclick = function()
+				{
+					_this.fnClick(this);
+				};
+			}
+		}
+			TabSwitch.prototype.fnClick = function(oBtn)
+			{
+				for(var i=0;i<this.aBtn.length;i++)
+				{
+					this.aBtn[i].className = '';
+					this.aDiv[i].style.display='none';
+				}
+				oBtn.className='active';
+				this.aDiv[oBtn.index].style.display = 'block';
+			};
+
+		</script>
+	</head>
+	<body>
+		<div id='div-continer'>
+			<input class='active' id='btn1' type="button" value="第一个">
+			<input id='btn2' type="button" value="第二个">
+			<input id='btn3' type="button" value="第三个">
+			<div style="display: block">第一个</div>
+			<div>第二个</div>
+			<div>第三个</div>
+		</div>
+	</body>
+	</html>

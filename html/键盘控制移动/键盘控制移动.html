@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>键盘控制移动</title>
+	<style type="text/css">
+		div
+		{
+			width: 100px;
+			height: 100px;
+			background: white;
+			position: absolute;
+			bottom: 50px;
+			left: 400px;
+		}
+		#div1
+		{
+			width: 1px;
+			height: 20px;
+			background: red;
+			position: absolute;
+			bottom: 150px;
+			left: 450px;	
+		}
+	</style>
+	<script type="text/javascript" src='move.js'></script>
+	<script type="text/javascript">
+		document.onkeydown=function(ev){
+			var oDiv = document.getElementsByTagName('div')[0];
+			var oDiv1 = document.getElementById('div1');
+			var oEvent = ev||event;
+
+			if(oEvent.keyCode == 37)
+			{
+				oDiv.style.left= oDiv.offsetLeft - 10 + 'px';
+				oDiv1.style.left=oDiv1.offsetLeft - 10 + 'px';
+			}
+			if(oEvent.keyCode == 39)
+			{
+				oDiv.style.left= oDiv.offsetLeft + 10 + 'px';
+				oDiv1.style.left=oDiv1.offsetLeft + 10 + 'px';
+			}
+			if(oEvent.keyCode == 32)
+			{
+				startMove(oDiv1,{top:0});
+			}
+		};
+	</script>
+</head>
+<body style="background: black;">
+<div></div>
+<div id='div1'></div>
+</body>
+</html>

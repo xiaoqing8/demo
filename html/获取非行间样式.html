@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>获取非行间样式</title>
+	<style type="text/css">
+		#div1
+		{
+			width: 200px;
+			height: 200px;
+			background: red;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function()
+		{
+			var oDiv = document.getElementById("div1");
+			if(oDiv.currentStyle)
+			alert(oDiv.currentStyle.width);  //只适用于IE浏览器
+		else
+			alert(getComputedStyle(oDiv,false).width);
+		}
+	</script>
+</head>
+<body>
+<div id='div1'></div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>鼠标坐标</title>
+	<style type="text/css">
+		#div1
+		{
+			width: 200px;
+			height: 200px;
+			background: red;
+			position: absolute;
+		}
+	</style>
+	<script type="text/javascript">
+	function getPos(ev)
+	{
+			var scrollTop = document.documentElement.scrollTop||document.body.scrollTop;
+			var scrollLeft = document.documentElement.scrollLeft||document.body.scrollLeft;
+
+			return {x:ev.clientX+scrollLeft, y:ev.clientY+scrollTop};//返回一个json，可以得到多个值
+	}
+		document.onmousemove=function(ev)
+		{
+			var oEvent = ev||event;
+			var oDiv = document.getElementById("div1");
+			var pos = getPos(oEvent);
+
+			oDiv.style.left = pos.x + 'px';
+			oDiv.style.top = pos.y + 'px';
+		};
+
+	</script>
+</head>
+<body style="height:2000px;">
+	<div id='div1'></div>
+</body>
+</html>

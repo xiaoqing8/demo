@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>黑白渐变</title>
+	<script type="text/javascript">
+		window.onload = function()
+		{
+		var c=document.getElementById("myCanvas");
+		var cxt=c.getContext("2d");
+		// var grd=cxt.createLinearGradient(0,0,170,0);  //横着渐变
+		var grd=cxt.createLinearGradient(0,0,0,100);  //竖着渐变
+		grd.addColorStop(0,'black');
+		grd.addColorStop(0.5,"red");
+		grd.addColorStop(1,"white");
+		cxt.fillStyle=grd;
+		// cxt.fillRect(0,0,200,100);
+		cxt.fillRect(20,20,150,100);
+		};
+	</script>
+</head>
+<body>
+<canvas id="myCanvas" width="200" height="100" style="border:1px solid black;"></canvas>
+</body>
+</html>
