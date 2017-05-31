@@ -3,6 +3,11 @@
 <head>
 	<meta charset="utf-8">
 	<title>AddDelete</title>
+	<style type="text/css">
+		table {
+			margin-top: 10px;
+		}
+	</style>
 	<script type="text/javascript">
 		window.onload = function()
 		{
@@ -14,6 +19,7 @@
 
 			var oBtn = document.getElementById('btn');
 			var oBtn1 = document.getElementById('btn1');
+			var oBtn2 = document.getElementById('btn2');
 
 			var id=oTab.tBodies[0].rows.length+1;
 
@@ -42,15 +48,24 @@
 			oBtn1.onclick=function(){
 				oTab.tBodies[0].deleteRow(0);
 			};
+			oBtn2.onclick=function(){
+				oTxtNom.value = "";
+				oTxtAge.value = "";
+				oTxtSex.value = "";
+			}
 		};
 	</script>
 </head>
 <body>
-	<input type="text" id = '姓名'>
-	<input type="text" id = '性别'>
-	<input type="text" id = '年龄'>
+	<label>姓名: </label>
+	<input type="text" id = '姓名'><br/>
+	<label>性别: </label>
+	<input type="text" id = '性别'><br/>
+	<label>年龄: </label>
+	<input type="text" id = '年龄'><br/><br/>
 	<input type="button" value="添加" id='btn'>
 	<input type="button" value="删除" id='btn1'>
+	<input type="button" value="清空" id='btn2'>
 	<table id='tab' border='1' width="500">
 		<thead>
 			<td>ID</td>
